@@ -85,6 +85,9 @@ body {
 .modal-wrapper .modal-footer {
   display: block;
 }
+.modal-wrapper .modal-footer p {
+  word-wrap: break-word;
+}
 .modal-wrapper .heart {
   display: inline-block;
   animation: heartBeat 3s linear infinite;
