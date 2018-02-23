@@ -1,0 +1,107 @@
+:root {
+  --shadow-light: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+  --shadow-deep: 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12), 0 8px 10px -5px rgba(0,0,0,0.3);
+  --accent-red: #eb4d4b;
+  --accent-green: #27ae60;
+  --accent-blue: #3742fa;
+  --text-dark: #333;
+  --accent-rgb: linear-gradient(to right, var(--accent-red), var(--accent-green), var(--accent-blue));
+  --accent-xy: linear-gradient(to right, #00dbde, #fc00ff);
+  --border-radius: 4px;
+}
+body {
+  background: rgb(var(--red), var(--green), var(--blue));
+  color: var(--text-dark);
+  transition: background .1s ease;
+  overflow: hidden;
+}
+.navbar {
+  box-shadow: var(--shadow-light);
+}
+.navbar .navbar-brand .gradient {
+  background: var(--accent-xy);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.content {
+  height: calc(100vh - 52px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rgb-form {
+  background: white;
+  padding: 10px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-deep);
+  opacity: 0;
+  transform: translate(0, 5px);
+  animation: fadeUp 1s ease forwards;
+}
+.rgb-form .rgb {
+  background: var(--accent-rgb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.rgb-form .xy {
+  background: var(--accent-xy);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.rgb-form label {
+  padding: 5px 10px;
+  color: white;
+  border-radius: var(--border-radius);
+}
+.rgb-form .form-control:focus {
+  box-shadow: none;
+}
+.red label {
+  background: var(--accent-red);
+}
+.red .form-control:focus {
+  border-color: var(--accent-red);
+}
+.green label {
+  background: var(--accent-green);
+}
+.green .form-control:focus {
+  border-color: var(--accent-green);
+}
+.blue label {
+  background: var(--accent-blue);
+}
+.blue .form-control:focus {
+  border-color: var(--accent-blue);
+}
+.modal-wrapper h6 {
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+}
+.modal-wrapper .modal-body p {
+  margin-bottom: 0;
+}
+.modal-wrapper .modal-footer {
+  display: block;
+}
+.modal-wrapper .heart {
+  display: inline-block;
+  animation: heartBeat 3s linear infinite;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes heartBeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+}
